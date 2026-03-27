@@ -4,14 +4,15 @@ import { useState, useCallback } from "react";
    CONSTANTS & PALETTE
    ════════════════════════════════════════════ */
 const C = {
-  bg: "#0B1120", sidebar: "#0f172a", sidebarHover: "#1e293b",
-  accent: "#818cf8", accentBright: "#a5b4fc", accentDim: "#4f46e5",
-  surface: "#f8fafc", paper: "#ffffff",
-  text: "#1e293b", muted: "#64748b", light: "#94a3b8",
-  border: "#e2e8f0", borderDark: "#334155",
+  bg: "#0a1628", sidebar: "#102044", sidebarHover: "#1a3060",
+  accent: "#c9a84c", accentBright: "#ddc175", accentDim: "#a8893a",
+  surface: "#f7f8fa", paper: "#ffffff",
+  text: "#1a2744", muted: "#5a6a82", light: "#8a9ab2",
+  border: "#d6dce6", borderDark: "#1e3a6a",
   green: "#34d399", greenDim: "#065f46",
   warn: "#fbbf24", warnBg: "#fffbeb",
   red: "#f87171",
+  navy: "#163172", gold: "#c9a84c", goldLight: "#ddc175",
 };
 
 /* ════════════════════════════════════════════
@@ -3342,8 +3343,8 @@ function ContractEditor({ data, setData, fieldGroups, clauseItems, onExportDOCX,
         overflowY: "auto", padding: "28px 24px",
       }}>
         <div style={{ display: "flex", gap: 10, marginBottom: 24, flexWrap: "wrap" }}>
-          <ActionBtn icon="📄" label="Exportar DOCX" onClick={onExportDOCX} accent="#2563eb" />
-          <ActionBtn icon="🖨️" label="Exportar PDF" onClick={onExportPDF} accent="#7c3aed" />
+          <ActionBtn icon="📄" label="Exportar DOCX" onClick={onExportDOCX} accent={C.navy} />
+          <ActionBtn icon="🖨️" label="Exportar PDF" onClick={onExportPDF} accent={C.gold} />
         </div>
 
         {fieldGroups.map((group, gi) => (
@@ -3366,7 +3367,7 @@ function ContractEditor({ data, setData, fieldGroups, clauseItems, onExportDOCX,
       </div>
 
       {/* Preview Panel */}
-      <div style={{ flex: 1, background: "#e2e8f0", overflowY: "auto", padding: "30px 20px" }}>
+      <div style={{ flex: 1, background: "#dde3ed", overflowY: "auto", padding: "30px 20px" }}>
         <div style={{
           maxWidth: 800, margin: "0 auto", background: C.paper, borderRadius: 6,
           boxShadow: "0 2px 12px rgba(0,0,0,.08)", minHeight: "100%",
@@ -3408,9 +3409,10 @@ function MobileHeader({ onToggleSidebar }) {
     }}
     className="mobile-header">
       <button onClick={onToggleSidebar} style={{
-        background: "none", border: "none", color: "#fff", fontSize: 22, cursor: "pointer",
+        background: "none", border: "none", color: C.goldLight, fontSize: 22, cursor: "pointer",
       }}>☰</button>
-      <span style={{ color: "#fff", fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 16 }}>
+      <img src={import.meta.env.BASE_URL + "logo-essencial.jpeg"} alt="Logo" style={{ width: 32, height: 32, borderRadius: "50%", objectFit: "cover", border: `2px solid ${C.gold}` }} />
+      <span style={{ color: C.goldLight, fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 16 }}>
         Essencial Contabilidade
       </span>
     </div>
@@ -3556,11 +3558,14 @@ function SidebarContent({ sidebarOpen, setSidebarOpen, view, setView, clauseItem
       }}>
         {sidebarOpen ? (
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <div>
-              <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 800, fontSize: 18, color: "#fff", letterSpacing: -0.5 }}>
-                📊 Essencial
+            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              <img src={import.meta.env.BASE_URL + "logo-essencial.jpeg"} alt="Logo" style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover", border: `2px solid ${C.gold}` }} />
+              <div>
+                <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 800, fontSize: 17, color: C.goldLight, letterSpacing: -0.3 }}>
+                  Essencial
+                </div>
+                <div style={{ fontSize: 11, color: C.light, marginTop: 1 }}>Contabilidade — Contratos</div>
               </div>
-              <div style={{ fontSize: 11, color: C.light, marginTop: 2 }}>Contabilidade — Contratos</div>
             </div>
             {setSidebarOpen && (
               <button onClick={() => setSidebarOpen(false)} style={{
@@ -3570,8 +3575,10 @@ function SidebarContent({ sidebarOpen, setSidebarOpen, view, setView, clauseItem
           </div>
         ) : (
           <button onClick={() => setSidebarOpen && setSidebarOpen(true)} style={{
-            background: "none", border: "none", color: "#fff", fontSize: 20, cursor: "pointer",
-          }}>📊</button>
+            background: "none", border: "none", cursor: "pointer", padding: 0,
+          }}>
+            <img src={import.meta.env.BASE_URL + "logo-essencial.jpeg"} alt="Logo" style={{ width: 36, height: 36, borderRadius: "50%", objectFit: "cover", border: `2px solid ${C.gold}` }} />
+          </button>
         )}
       </div>
 

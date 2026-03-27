@@ -24,18 +24,24 @@ npm run build     # Production build to dist/
 npm run preview   # Preview production build
 ```
 
+## Deployment
+
+Pushes to `main` auto-deploy to GitHub Pages via `.github/workflows/deploy.yml` (Node 20, `npm ci && npm run build`, uploads `dist/`). Always run `npm run build` locally before pushing to catch errors.
+
 ## Architecture
 
-Single-file React app (~2200 lines) in `src/app.jsx`. No external components or modules.
+Single-file React app (~3600 lines) in `src/app.jsx`. No external components or modules.
 
-**Data layer** (per contract type, suffixed by type name e.g. `_PRESTACAO`, `_PARCERIA`, `_SOCIAL`, `_CABELEIREIRO`):
+**Current contract types (8):** prestacao, parceria, social, cabeleireiro, inatividade, alteracao, distrato, paralisacao — defined in `CONTRACT_TYPES` array (~line 1184).
+
+**Data layer** (per contract type, suffixed by type name e.g. `_PRESTACAO`, `_PARCERIA`, `_SOCIAL`, `_CABELEIREIRO`, `_INATIVIDADE`, `_ALTERACAO`, `_DISTRATO`, `_PARALISACAO`):
 - `DEFAULT_DATA_*` — default form values; contratada fields pre-filled with Ana Lúcia's info, contratante fields empty
 - `FIELD_GROUPS_*` — array of `{ title, icon, fields[] }` driving the form UI
 - `CLAUSE_ITEMS_*` — sidebar clause navigation items with `{ icon, label, id }` where `id` matches an element in the preview
 
 **Registry:**
 - `CONTRACT_TYPES` — array of `{ id, label, icon }` for available tabs; add new contracts here
-- `configs` object inside `App()` — maps each contract type id to its `{ data, setData, fieldGroups, clauseItems, exportDOCX, exportPDF, Paper }`. This is the central wiring point.
+- `configs` object inside `App()` (~line 3460) — maps each contract type id to its `{ data, setData, fieldGroups, clauseItems, exportDOCX, exportPDF, Paper }`. This is the central wiring point.
 
 **Dual rendering (must stay in sync):**
 - `buildContractHTML*(d)` — generates an HTML string used for DOCX/PDF export
@@ -48,6 +54,8 @@ These two render the same contract content in different ways. Any clause text ch
 - `SidebarContent` — collapsible sidebar with contract type tabs + clause navigation
 - `Field` — renders a single form input
 - `ActionBtn` — styled button for export actions
+
+**Color palette:** All colors live in the `C` constant at the top of the file. Every inline style references `C.*` — never use raw hex values elsewhere.
 
 **Naming convention:** The first contract type (prestacao) uses unsuffixed names (`buildContractHTML`, `exportDOCX`, `exportPDF`, `ContractPaper`). All other types use suffixed names (`buildContractHTMLParceria`, `ContractPaperSocial`, etc.).
 
