@@ -1180,6 +1180,136 @@ const CLAUSE_ITEMS_PARALISACAO = [
 ];
 
 /* ════════════════════════════════════════════
+   DEFAULT CONTRACT DATA — ALTERAÇÃO CONTRATUAL ESSENCIAL CONTABILIDADE
+   ════════════════════════════════════════════ */
+const DEFAULT_DATA_ALTERACAOESSENCIAL = {
+  // Empresa (antes da transformação)
+  emp_razao_anterior: "ANA LUCIA GONÇALVES - ME",
+  emp_cnpj: "11.154.925/0001-03",
+  emp_nire: "31109925543",
+  emp_data_registro: "17/09/2009",
+  emp_crc: "MG-012.577O",
+  emp_endereco: "rua Anunciação, nº 218. bairro Jardim São José, BH/MG",
+  emp_cep: "30.820-160",
+  // Sócia
+  sc_nome: "Ana Lúcia Gonçalves",
+  sc_nacionalidade: "brasileira",
+  sc_estado_civil: "divorciada",
+  sc_profissao: "Técnico em Contabilidade",
+  sc_nascimento: "19/07/1969",
+  sc_naturalidade: "Pará de Minas /MG",
+  sc_rg: "5.021.848",
+  sc_rg_orgao: "SSP/MG",
+  sc_cpf: "762.792.436-72",
+  sc_crc: "MG-053.455/O",
+  sc_endereco: "rua Anunciação, nº 218. bairro Jardim São José, BH/MG",
+  sc_endereco_atos: "rua Anunciação, nº 2018. bairro Jardim São José, BH/MG",
+  sc_cep: "30.820-160",
+  // Alteração arquivada
+  alt_numero: "5157163",
+  alt_data: "02/10/2013",
+  // Nova empresa
+  emp_razao_nova: "CONTABILIDADE ESSENCIAL LTDA",
+  emp_nome_fantasia: "ESSENCIAL CONTABILIDADE",
+  // Objeto social
+  emp_objeto: "a prestação de serviços de atividade de contabilidade, como abertura, alteração contratual e baixa de empresas, bem como a contabilização dos setores fiscal, contabil, trabalhista e previdenciario. Execução das obrigações acessorias no âmbito federal, estadual e municipal",
+  // Capital social
+  cap_valor: "20.000,00",
+  cap_valor_extenso: "Vinte mil reais",
+  cap_valor_quota: "1.000,00",
+  cap_valor_quota_extenso: "um mil real",
+  // Início atividades
+  emp_data_inicio: "17/09/2009",
+  // Assinatura
+  vig_local_data: "Belo Horizonte, 24 de Outubro de 2023",
+};
+
+const FIELD_GROUPS_ALTERACAOESSENCIAL = [
+  {
+    title: "Empresa (antes da transformação)",
+    icon: "🏢",
+    fields: [
+      { id: "emp_razao_anterior", label: "Razão Social Anterior", type: "text", ph: "Ex: ANA LUCIA GONÇALVES - ME" },
+      { id: "emp_cnpj", label: "CNPJ", type: "text", ph: "00.000.000/0000-00" },
+      { id: "emp_nire", label: "NIRE", type: "text", ph: "Ex: 31109925543" },
+      { id: "emp_data_registro", label: "Data de Registro", type: "text", ph: "Ex: 17/09/2009" },
+      { id: "emp_crc", label: "CRC da Empresa", type: "text", ph: "Ex: MG-012.577O" },
+      { id: "emp_endereco", label: "Endereço Completo", type: "text", ph: "Rua, nº, bairro, cidade/UF" },
+      { id: "emp_cep", label: "CEP", type: "text", ph: "00.000-000" },
+    ]
+  },
+  {
+    title: "Dados da Sócia",
+    icon: "👤",
+    fields: [
+      { id: "sc_nome", label: "Nome Completo", type: "text", ph: "Nome da sócia" },
+      { id: "sc_nacionalidade", label: "Nacionalidade", type: "text", ph: "Ex: brasileira" },
+      { id: "sc_estado_civil", label: "Estado Civil", type: "text", ph: "Ex: divorciada" },
+      { id: "sc_profissao", label: "Profissão", type: "text", ph: "Ex: Técnico em Contabilidade" },
+      { id: "sc_nascimento", label: "Data de Nascimento", type: "text", ph: "Ex: 19/07/1969" },
+      { id: "sc_naturalidade", label: "Naturalidade", type: "text", ph: "Ex: Pará de Minas /MG" },
+      { id: "sc_rg", label: "RG / Identidade", type: "text", ph: "Ex: 5.021.848" },
+      { id: "sc_rg_orgao", label: "Órgão Emissor", type: "text", ph: "Ex: SSP/MG" },
+      { id: "sc_cpf", label: "CPF", type: "text", ph: "000.000.000-00" },
+      { id: "sc_crc", label: "CRC Pessoal", type: "text", ph: "Ex: MG-053.455/O" },
+      { id: "sc_endereco", label: "Endereço (Transformação)", type: "text", ph: "Rua, nº, bairro, cidade/UF" },
+      { id: "sc_endereco_atos", label: "Endereço (Atos Constitutivos)", type: "text", ph: "Rua, nº, bairro, cidade/UF" },
+      { id: "sc_cep", label: "CEP", type: "text", ph: "00.000-000" },
+    ]
+  },
+  {
+    title: "Alteração Arquivada",
+    icon: "📋",
+    fields: [
+      { id: "alt_numero", label: "Número da Alteração", type: "text", ph: "Ex: 5157163" },
+      { id: "alt_data", label: "Data da Alteração", type: "text", ph: "Ex: 02/10/2013" },
+    ]
+  },
+  {
+    title: "Nova Empresa",
+    icon: "🔄",
+    fields: [
+      { id: "emp_razao_nova", label: "Nova Razão Social", type: "text", ph: "Ex: CONTABILIDADE ESSENCIAL LTDA" },
+      { id: "emp_nome_fantasia", label: "Nome Fantasia", type: "text", ph: "Ex: ESSENCIAL CONTABILIDADE" },
+      { id: "emp_objeto", label: "Objeto Social", type: "textarea", ph: "Descrição das atividades" },
+    ]
+  },
+  {
+    title: "Capital Social",
+    icon: "💰",
+    fields: [
+      { id: "cap_valor", label: "Valor Total (R$)", type: "text", ph: "Ex: 20.000,00" },
+      { id: "cap_valor_extenso", label: "Valor por Extenso", type: "text", ph: "Ex: Vinte mil reais" },
+      { id: "cap_valor_quota", label: "Valor de Cada Quota (R$)", type: "text", ph: "Ex: 1.000,00" },
+      { id: "cap_valor_quota_extenso", label: "Valor da Quota por Extenso", type: "text", ph: "Ex: um mil real" },
+    ]
+  },
+  {
+    title: "Assinatura",
+    icon: "📅",
+    fields: [
+      { id: "emp_data_inicio", label: "Início das Atividades", type: "text", ph: "Ex: 17/09/2009" },
+      { id: "vig_local_data", label: "Local e Data", type: "text", ph: "Ex: Belo Horizonte, 24 de Outubro de 2023" },
+    ]
+  },
+];
+
+const CLAUSE_ITEMS_ALTERACAOESSENCIAL = [
+  { icon: "🔄", label: "Transformação", id: "ae-transformacao" },
+  { icon: "🏢", label: "Denominação e Sede", id: "ae-denominacao" },
+  { icon: "🎯", label: "Objeto Social (Transf.)", id: "ae-objeto-transf" },
+  { icon: "📜", label: "Atos Constitutivos", id: "ae-atos" },
+  { icon: "🏛️", label: "Denominação e Duração", id: "ae-denominacao-atos" },
+  { icon: "💰", label: "Capital Social", id: "ae-capital" },
+  { icon: "⚙️", label: "Administração", id: "ae-admin" },
+  { icon: "📋", label: "Deliberações Sociais", id: "ae-deliberacoes" },
+  { icon: "📊", label: "Exercício e Balanço", id: "ae-exercicio" },
+  { icon: "🔗", label: "Continuidade", id: "ae-continuidade" },
+  { icon: "⚖️", label: "Foro", id: "ae-foro" },
+  { icon: "✍️", label: "Assinatura", id: "ae-assinatura" },
+];
+
+/* ════════════════════════════════════════════
    CONTRACT TYPES (tabs)
    ════════════════════════════════════════════ */
 const CONTRACT_TYPES = [
@@ -1191,6 +1321,7 @@ const CONTRACT_TYPES = [
   { id: "alteracao", label: "Alteração Contratual", icon: "🔄" },
   { id: "distrato", label: "Termo de Distrato", icon: "📝" },
   { id: "paralisacao", label: "Comunicação de Paralisação", icon: "🔇" },
+  { id: "alteracaoessencial", label: "Alteração Contratual Essencial", icon: "🏛️" },
 ];
 
 /* ════════════════════════════════════════════
@@ -2288,6 +2419,126 @@ function exportPDFParalisacao(d) {
   setTimeout(() => w.print(), 400);
 }
 
+function buildContractHTMLAlteracaoEssencial(d) {
+  const p = (text) => `<p style="text-align:justify;margin:6pt 0;line-height:1.7;">${text}</p>`;
+  const sec = (title) => `<h2 style="font-size:13pt;color:#1a365d;border-bottom:1pt solid #2b6cb0;padding-bottom:4pt;margin-top:16pt;font-weight:700;">${title}</h2>`;
+  const b = (text) => `<b>${text}</b>`;
+  const _ = (val) => val || "________";
+
+  return `
+<p style="text-align:center;font-size:12pt;font-weight:700;margin-bottom:4pt;">${_(d.emp_razao_anterior)}</p>
+<p style="text-align:center;font-size:11pt;margin-bottom:2pt;">CNPJ ${_(d.emp_cnpj)}</p>
+<p style="text-align:center;font-size:11pt;margin-bottom:2pt;">NIRE ${_(d.emp_nire)}</p>
+<p style="text-align:center;font-size:11pt;margin-bottom:20pt;">EM ${_(d.emp_data_registro)}</p>
+
+<h1 style="font-size:14pt;text-align:center;margin-bottom:20pt;letter-spacing:0.5pt;font-weight:700;">TRANSFORMAÇÃO EM SOCIEDADE EMPRESARIA LIMITADA</h1>
+
+${p(`${b(_(d.emp_razao_anterior))}, empresario individual, inscrita no CNPJ sob nº ${_(d.emp_cnpj)}, registro no Conselho Regional de Contabilidade sob nº ${_(d.emp_crc)}, estabelecida à ${_(d.emp_endereco)}, CEP ${_(d.emp_cep)}, representada pela unica sócia, ${_(d.sc_nome)}, ${_(d.sc_nacionalidade)}, ${_(d.sc_estado_civil)}, ${_(d.sc_profissao)}, nascida em ${_(d.sc_nascimento)}, natural de ${_(d.sc_naturalidade)}, portadora da Cédula de Identidade RG n° ${_(d.sc_rg)}, ${_(d.sc_rg_orgao)}, inscrita no CPF sob n° ${_(d.sc_cpf)}, inscrita no Conselho Regional de Contabilidade, sob nº ${_(d.sc_crc)}, residente à ${_(d.sc_endereco)}, registrada na Junta Comercial de Minas Gerais sob o NIRE nº ${_(d.emp_nire)} em ${_(d.emp_data_registro)} e alteração arquivada sob nº ${_(d.alt_numero)} em ${_(d.alt_data)}, resolve neste ato fazer a Transformação de empresario individual para Sociedade empresária limitada, regida por este Contrato Social, pelas disposições legais aplicáveis às sociedades limitadas na Lei Federal 10.406 de 10 de janeiro de 2002, conforme cláusulas a seguir:`)}
+
+${sec("CAPÍTULO I — DENOMINAÇÃO, SEDE E OBJETO")}
+
+${p(`${b("Cláusula 1.")} Transformação da empresario individual em uma Sociedade empresária Limitada.`)}
+
+${p(`${b("Cláusula 2.")} Alteração sua razão social para ${b(_(d.emp_razao_nova))}, e mantem seu nome fantasia, ${b(_(d.emp_nome_fantasia))}.`)}
+
+${p(`${b("Cláusula 3.")} A sociedade continua na sua sede e foro na ${_(d.emp_endereco)}, CEP. ${_(d.emp_cep).replace(/[.\-]/g, "").replace(/(\d{5})(\d{3})/, "$1-$2")}, e poderá abrir e encerrar filiais, em qualquer localidade do País.`)}
+
+${p(`${b("Cláusula 4.")} O objeto social é ${_(d.emp_objeto)}.`)}
+
+<div style="page-break-before:always;"></div>
+
+<p style="text-align:center;font-size:12pt;font-weight:700;margin-bottom:4pt;margin-top:30pt;">ATOS CONSTITUTIVOS</p>
+
+<p style="text-align:center;font-size:13pt;font-weight:700;margin-bottom:4pt;">${_(d.emp_razao_nova)}</p>
+<p style="text-align:center;font-size:11pt;margin-bottom:2pt;">CNPJ ${_(d.emp_cnpj)}</p>
+<p style="text-align:center;font-size:11pt;margin-bottom:2pt;">NIRE ${_(d.emp_nire)}</p>
+<p style="text-align:center;font-size:11pt;margin-bottom:20pt;">EM ${_(d.emp_data_registro)}</p>
+
+${p(`${b(_(d.emp_razao_nova))}, sociedade empresaria limitada, inscrita no CNPJ sob nº ${_(d.emp_cnpj)}, registro no Conselho Regional de Contabilidade sob o nº ${_(d.emp_crc)}, estabelecida à ${_(d.emp_endereco)}, CEP ${_(d.emp_cep)}, representada pela única sócia, ${_(d.sc_nome)}, ${_(d.sc_nacionalidade)}, ${_(d.sc_estado_civil)}, ${_(d.sc_profissao)}, nascida em ${_(d.sc_nascimento)}, natural de ${_(d.sc_naturalidade)}, portadora da Cédula de Identidade RG/MG n° ${_(d.sc_rg)}, ${_(d.sc_rg_orgao)}, inscrita no CPF sob n° ${_(d.sc_cpf)}, inscrita no Conselho Regional de Contabilidade sob nº ${_(d.sc_crc)}, residente à ${_(d.sc_endereco_atos)},CEP ${_(d.sc_cep)}, registrada na Junta Comercial de Minas Gerais sob o NIRE nº ${_(d.emp_nire)} em ${_(d.emp_data_registro)} e alteração arquivada sob nº ${_(d.alt_numero)} em ${_(d.alt_data)}, regida por este Contrato Social, pelas disposições legais aplicáveis às sociedades limitadas na Lei Federal 10.406 de 10 de janeiro de 2002, conforme cláusulas a seguir:`)}
+
+${sec("CAPÍTULO I — DENOMINAÇÃO, SEDE, OBJETO E DURAÇÃO")}
+
+${p(`${b("Cláusula 1.")} A sociedade empresaria limitada, rege sob a razão social de ${b(_(d.emp_razao_nova))} e nome fantasia, ${b(_(d.emp_nome_fantasia))}.`)}
+
+${p(`${b("Cláusula 2.")} A Sociedade tem sede e foro à ${_(d.emp_endereco)}, CEP. ${_(d.emp_cep).replace(/[.\-]/g, "").replace(/(\d{5})(\d{3})/, "$1-$2")} e poderá abrir e encerrar filiais, em qualquer localidade do País.`)}
+
+${p(`${b("Cláusula 3.")} O objeto social é ${_(d.emp_objeto)}.`)}
+
+${p(`${b("Cláusula 4.")} A Sociedade iniciou suas atividades em ${_(d.emp_data_inicio)} e terá prazo de duração indeterminado.`)}
+
+${sec("CAPÍTULO II — CAPITAL SOCIAL")}
+
+${p(`${b("Cláusula 5.")} O capital social da Sociedade é de R$ R$${_(d.cap_valor)} (${_(d.cap_valor_extenso)}), no valor nominal de R$ ${_(d.cap_valor_quota)} (${_(d.cap_valor_quota_extenso)}) cada uma, totalmente subscrito e integralizado em moeda corrente nacional pelo único sócio.`)}
+
+${p(`${b("Cláusula 6.")} A Sociedade é uma sociedade empresaria limitada nos termos do parágrafo primeiro do Art. 1.052 do Código Civil.`)}
+
+${sec("CAPÍTULO III — ADMINISTRAÇÃO E DECLARAÇÃO DO SÓCIO")}
+
+${p(`${b("Cláusula 7.")} A administração da Sociedade será exercida pelo única sócia ${b(_(d.sc_nome))}, ja qualificada acima, quem incumbe a representação ativa e passiva da Sociedade, judicial ou extrajudicialmente, e podendo praticar todos os atos compreendidos no objeto social, sempre no interesse da Sociedade, sendo vedado, todavia, a vinculação do patrimônio social em negócios estranhos à atividade da Sociedade, em especial configurar como avalista, realizar endossos e/ou depositar valores a título de caução.`)}
+
+${p(`${b("Cláusula 8.")} A sócia, declara, sob as penas da lei, inclusive, que são verídicas todas as informações prestadas neste Contrato Social, e quanto ao disposto no Art. 299 do Código Penal, não estar impedido de exercer atividade empresária e não possuir outro registro como Empresário Individual no País.`)}
+
+${p(`${b("Cláusula 9.")} As procurações da sociedade serão outorgadas pela única sócia e administradora devendo sempre especificar os poderes conferidos e, com exceção daquelas outorgadas para fins judiciais, terão prazo de validade limitado em 1 (um) ano.`)}
+
+${p(`${b("Cláusula 10.")} A administradora da sociedade declara, sob as penas da lei, que não está impedido de exercer a administração da Sociedade, por lei especial, ou em virtude de condenação criminal, ou por se encontrar sob os efeitos dela, a pena que vede, ainda que temporariamente, o acesso a cargos públicos; ou por crime falimentar, de prevaricação, peita ou suborno, concussão, peculato, ou contra a economia popular, contra o sistema financeiro nacional, contra normas de defesa da concorrência, contra as relações de consumo, fé pública, ou a propriedade.`)}
+
+${sec("CAPÍTULO IV — DAS DELIBERAÇÕES SOCIAIS")}
+
+${p(`${b("Cláusula 11.")} As deliberações sociais serão tomadas sempre pela sua única sócia.`)}
+
+${p(`${b("Cláusula 12.")} Dispensam-se as formalidades de convocação por ser constituída por única sócia.`)}
+
+${p(`${b("Cláusula 13.")} Dos trabalhos e deliberações será lavrada ata que deverá ser assinada pelo sua única sócia.`)}
+
+${sec("CAPÍTULO V — DO EXERCÍCIO SOCIAL, BALANÇO E LUCROS")}
+
+${p(`${b("Cláusula 14.")} O exercício social se encerra no dia 31 de dezembro de cada ano, data em que serão levantadas as demonstrações financeiras do exercício, com observância das prescrições legais. A Sociedade distribuirá seus lucros, se houver, mediante aprovação de sua única sócia.`)}
+
+${sec("CAPÍTULO VI — DA CONTINUIDADE DA SOCIEDADE")}
+
+${p(`${b("Cláusula 15.")} No caso de falecimento ou interdição da única sócia, a empresa poderá continuar as suas atividades com os herdeiros, sucessores e/ou sucessores do incapaz. Na hipótese de não ser possível ou na ausência de interesse destes, os valores pendentes devem ser apurados e liquidados com base na situação patrimonial da empresa, à data da resolução, verificada em balanço especialmente levantado.`)}
+
+${sec("CAPÍTULO VII — FORO")}
+
+${p(`${b("Cláusula 16.")} Em caso de desavenças em razão deste Contrato Social, é estabelecido o foro da Comarca de Belo Horizonte para conhecer e dirimir quaisquer dúvidas ou discussões oriundas deste Contrato, com renúncia a qualquer outro, por mais especial e privilegiado que seja.`)}
+
+${p("E assim, estando as Partes de comum acordo quanto ao contratado, dando-o por justo e acertado, assinam o presente Contrato digitalmente.")}
+
+${p(_(d.vig_local_data))}
+
+<div style="margin-top:40pt;text-align:center;">
+  <div style="width:60%;margin:0 auto;border-top:1pt solid #333;padding-top:8pt;">
+    <b>${_(d.emp_razao_nova)}</b><br/>
+    ${_(d.sc_nome)}<br/>
+    Sócia Administradora
+  </div>
+</div>`;
+}
+
+function exportDOCXAlteracaoEssencial(d) {
+  const html = buildContractHTMLAlteracaoEssencial(d);
+  const fullHTML = `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head><meta charset="utf-8"><style>body{font-family:'Times New Roman',serif;font-size:11pt;margin:2cm;color:#1e293b;}</style></head>
+<body>${html}</body></html>`;
+  const blob = new Blob(["\ufeff" + fullHTML], { type: "application/msword" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `Alteracao_Contratual_Essencial_Contabilidade.doc`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function exportPDFAlteracaoEssencial(d) {
+  const html = buildContractHTMLAlteracaoEssencial(d);
+  const w = window.open("", "_blank");
+  w.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8">
+<style>@page{size:A4;margin:2cm;}body{font-family:'Times New Roman',serif;font-size:11pt;color:#1e293b;line-height:1.7;}</style>
+</head><body>${html}</body></html>`);
+  w.document.close();
+  setTimeout(() => w.print(), 400);
+}
+
 function scrollToId(id) {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -3333,6 +3584,114 @@ function ContractPaperParalisacao({ data }) {
   );
 }
 
+function ContractPaperAlteracaoEssencial({ data }) {
+  const d = data;
+  const ph = (val, fallback = "________") => val || <span style={{ color: C.light, fontStyle: "italic" }}>{fallback}</span>;
+  const secStyle = { fontSize: "13pt", color: "#1a365d", borderBottom: "1pt solid #2b6cb0", paddingBottom: 4, marginTop: 16, fontWeight: 700, fontFamily: "'DM Sans', sans-serif" };
+  const pStyle = { textAlign: "justify", margin: "6pt 0", lineHeight: 1.7 };
+
+  return (
+    <div style={{ fontFamily: "'Times New Roman', serif", fontSize: "11pt", color: C.text, padding: "40px 50px" }}>
+
+      {/* ── PARTE 1: TRANSFORMAÇÃO ── */}
+      <p style={{ textAlign: "center", fontSize: "12pt", fontWeight: 700, marginBottom: 4 }}>{ph(d.emp_razao_anterior)}</p>
+      <p style={{ textAlign: "center", fontSize: "11pt", marginBottom: 2 }}>CNPJ {ph(d.emp_cnpj)}</p>
+      <p style={{ textAlign: "center", fontSize: "11pt", marginBottom: 2 }}>NIRE {ph(d.emp_nire)}</p>
+      <p style={{ textAlign: "center", fontSize: "11pt", marginBottom: 20 }}>EM {ph(d.emp_data_registro)}</p>
+
+      <h1 id="ae-transformacao" style={{ fontSize: "14pt", textAlign: "center", marginBottom: 20, letterSpacing: 0.5, fontWeight: 700 }}>
+        TRANSFORMAÇÃO EM SOCIEDADE EMPRESARIA LIMITADA
+      </h1>
+
+      <p style={pStyle}>
+        <b>{ph(d.emp_razao_anterior)}</b>, empresario individual, inscrita no CNPJ sob nº {ph(d.emp_cnpj)}, registro no Conselho Regional de Contabilidade sob nº {ph(d.emp_crc)}, estabelecida à {ph(d.emp_endereco)}, CEP {ph(d.emp_cep)}, representada pela unica sócia, {ph(d.sc_nome)}, {ph(d.sc_nacionalidade)}, {ph(d.sc_estado_civil)}, {ph(d.sc_profissao)}, nascida em {ph(d.sc_nascimento)}, natural de {ph(d.sc_naturalidade)}, portadora da Cédula de Identidade RG n° {ph(d.sc_rg)}, {ph(d.sc_rg_orgao)}, inscrita no CPF sob n° {ph(d.sc_cpf)}, inscrita no Conselho Regional de Contabilidade, sob nº {ph(d.sc_crc)}, residente à {ph(d.sc_endereco)}, registrada na Junta Comercial de Minas Gerais sob o NIRE nº {ph(d.emp_nire)} em {ph(d.emp_data_registro)} e alteração arquivada sob nº {ph(d.alt_numero)} em {ph(d.alt_data)}, resolve neste ato fazer a Transformação de empresario individual para Sociedade empresária limitada, regida por este Contrato Social, pelas disposições legais aplicáveis às sociedades limitadas na Lei Federal 10.406 de 10 de janeiro de 2002, conforme cláusulas a seguir:
+      </p>
+
+      <h2 id="ae-denominacao" style={secStyle}>CAPÍTULO I — DENOMINAÇÃO, SEDE E OBJETO</h2>
+
+      <p style={pStyle}><b>Cláusula 1.</b> Transformação da empresario individual em uma Sociedade empresária Limitada.</p>
+
+      <p style={pStyle}><b>Cláusula 2.</b> Alteração sua razão social para <b>{ph(d.emp_razao_nova)}</b>, e mantem seu nome fantasia, <b>{ph(d.emp_nome_fantasia)}</b>.</p>
+
+      <p style={pStyle}><b>Cláusula 3.</b> A sociedade continua na sua sede e foro na {ph(d.emp_endereco)}, CEP. {ph(d.emp_cep)}, e poderá abrir e encerrar filiais, em qualquer localidade do País.</p>
+
+      <p id="ae-objeto-transf" style={pStyle}><b>Cláusula 4.</b> O objeto social é {ph(d.emp_objeto)}.</p>
+
+      {/* ── PARTE 2: ATOS CONSTITUTIVOS ── */}
+      <div style={{ borderTop: "3px double #1a365d", marginTop: 40, paddingTop: 30 }}>
+        <p id="ae-atos" style={{ textAlign: "center", fontSize: "12pt", fontWeight: 700, marginBottom: 4 }}>ATOS CONSTITUTIVOS</p>
+
+        <p style={{ textAlign: "center", fontSize: "13pt", fontWeight: 700, marginBottom: 4 }}>{ph(d.emp_razao_nova)}</p>
+        <p style={{ textAlign: "center", fontSize: "11pt", marginBottom: 2 }}>CNPJ {ph(d.emp_cnpj)}</p>
+        <p style={{ textAlign: "center", fontSize: "11pt", marginBottom: 2 }}>NIRE {ph(d.emp_nire)}</p>
+        <p style={{ textAlign: "center", fontSize: "11pt", marginBottom: 20 }}>EM {ph(d.emp_data_registro)}</p>
+
+        <p style={pStyle}>
+          <b>{ph(d.emp_razao_nova)}</b>, sociedade empresaria limitada, inscrita no CNPJ sob nº {ph(d.emp_cnpj)}, registro no Conselho Regional de Contabilidade sob o nº {ph(d.emp_crc)}, estabelecida à {ph(d.emp_endereco)}, CEP {ph(d.emp_cep)}, representada pela única sócia, {ph(d.sc_nome)}, {ph(d.sc_nacionalidade)}, {ph(d.sc_estado_civil)}, {ph(d.sc_profissao)}, nascida em {ph(d.sc_nascimento)}, natural de {ph(d.sc_naturalidade)}, portadora da Cédula de Identidade RG/MG n° {ph(d.sc_rg)}, {ph(d.sc_rg_orgao)}, inscrita no CPF sob n° {ph(d.sc_cpf)}, inscrita no Conselho Regional de Contabilidade sob nº {ph(d.sc_crc)}, residente à {ph(d.sc_endereco_atos)},CEP {ph(d.sc_cep)}, registrada na Junta Comercial de Minas Gerais sob o NIRE nº {ph(d.emp_nire)} em {ph(d.emp_data_registro)} e alteração arquivada sob nº {ph(d.alt_numero)} em {ph(d.alt_data)}, regida por este Contrato Social, pelas disposições legais aplicáveis às sociedades limitadas na Lei Federal 10.406 de 10 de janeiro de 2002, conforme cláusulas a seguir:
+        </p>
+
+        <h2 id="ae-denominacao-atos" style={secStyle}>CAPÍTULO I — DENOMINAÇÃO, SEDE, OBJETO E DURAÇÃO</h2>
+
+        <p style={pStyle}><b>Cláusula 1.</b> A sociedade empresaria limitada, rege sob a razão social de <b>{ph(d.emp_razao_nova)}</b> e nome fantasia, <b>{ph(d.emp_nome_fantasia)}</b>.</p>
+
+        <p style={pStyle}><b>Cláusula 2.</b> A Sociedade tem sede e foro à {ph(d.emp_endereco)}, CEP. {ph(d.emp_cep)} e poderá abrir e encerrar filiais, em qualquer localidade do País.</p>
+
+        <p style={pStyle}><b>Cláusula 3.</b> O objeto social é {ph(d.emp_objeto)}.</p>
+
+        <p style={pStyle}><b>Cláusula 4.</b> A Sociedade iniciou suas atividades em {ph(d.emp_data_inicio)} e terá prazo de duração indeterminado.</p>
+
+        <h2 id="ae-capital" style={secStyle}>CAPÍTULO II — CAPITAL SOCIAL</h2>
+
+        <p style={pStyle}><b>Cláusula 5.</b> O capital social da Sociedade é de R$ R${ph(d.cap_valor)} ({ph(d.cap_valor_extenso)}), no valor nominal de R$ {ph(d.cap_valor_quota)} ({ph(d.cap_valor_quota_extenso)}) cada uma, totalmente subscrito e integralizado em moeda corrente nacional pelo único sócio.</p>
+
+        <p style={pStyle}><b>Cláusula 6.</b> A Sociedade é uma sociedade empresaria limitada nos termos do parágrafo primeiro do Art. 1.052 do Código Civil.</p>
+
+        <h2 id="ae-admin" style={secStyle}>CAPÍTULO III — ADMINISTRAÇÃO E DECLARAÇÃO DO SÓCIO</h2>
+
+        <p style={pStyle}><b>Cláusula 7.</b> A administração da Sociedade será exercida pelo única sócia <b>{ph(d.sc_nome)}</b>, ja qualificada acima, quem incumbe a representação ativa e passiva da Sociedade, judicial ou extrajudicialmente, e podendo praticar todos os atos compreendidos no objeto social, sempre no interesse da Sociedade, sendo vedado, todavia, a vinculação do patrimônio social em negócios estranhos à atividade da Sociedade, em especial configurar como avalista, realizar endossos e/ou depositar valores a título de caução.</p>
+
+        <p style={pStyle}><b>Cláusula 8.</b> A sócia, declara, sob as penas da lei, inclusive, que são verídicas todas as informações prestadas neste Contrato Social, e quanto ao disposto no Art. 299 do Código Penal, não estar impedido de exercer atividade empresária e não possuir outro registro como Empresário Individual no País.</p>
+
+        <p style={pStyle}><b>Cláusula 9.</b> As procurações da sociedade serão outorgadas pela única sócia e administradora devendo sempre especificar os poderes conferidos e, com exceção daquelas outorgadas para fins judiciais, terão prazo de validade limitado em 1 (um) ano.</p>
+
+        <p style={pStyle}><b>Cláusula 10.</b> A administradora da sociedade declara, sob as penas da lei, que não está impedido de exercer a administração da Sociedade, por lei especial, ou em virtude de condenação criminal, ou por se encontrar sob os efeitos dela, a pena que vede, ainda que temporariamente, o acesso a cargos públicos; ou por crime falimentar, de prevaricação, peita ou suborno, concussão, peculato, ou contra a economia popular, contra o sistema financeiro nacional, contra normas de defesa da concorrência, contra as relações de consumo, fé pública, ou a propriedade.</p>
+
+        <h2 id="ae-deliberacoes" style={secStyle}>CAPÍTULO IV — DAS DELIBERAÇÕES SOCIAIS</h2>
+
+        <p style={pStyle}><b>Cláusula 11.</b> As deliberações sociais serão tomadas sempre pela sua única sócia.</p>
+
+        <p style={pStyle}><b>Cláusula 12.</b> Dispensam-se as formalidades de convocação por ser constituída por única sócia.</p>
+
+        <p style={pStyle}><b>Cláusula 13.</b> Dos trabalhos e deliberações será lavrada ata que deverá ser assinada pelo sua única sócia.</p>
+
+        <h2 id="ae-exercicio" style={secStyle}>CAPÍTULO V — DO EXERCÍCIO SOCIAL, BALANÇO E LUCROS</h2>
+
+        <p style={pStyle}><b>Cláusula 14.</b> O exercício social se encerra no dia 31 de dezembro de cada ano, data em que serão levantadas as demonstrações financeiras do exercício, com observância das prescrições legais. A Sociedade distribuirá seus lucros, se houver, mediante aprovação de sua única sócia.</p>
+
+        <h2 id="ae-continuidade" style={secStyle}>CAPÍTULO VI — DA CONTINUIDADE DA SOCIEDADE</h2>
+
+        <p style={pStyle}><b>Cláusula 15.</b> No caso de falecimento ou interdição da única sócia, a empresa poderá continuar as suas atividades com os herdeiros, sucessores e/ou sucessores do incapaz. Na hipótese de não ser possível ou na ausência de interesse destes, os valores pendentes devem ser apurados e liquidados com base na situação patrimonial da empresa, à data da resolução, verificada em balanço especialmente levantado.</p>
+
+        <h2 id="ae-foro" style={secStyle}>CAPÍTULO VII — FORO</h2>
+
+        <p style={pStyle}><b>Cláusula 16.</b> Em caso de desavenças em razão deste Contrato Social, é estabelecido o foro da Comarca de Belo Horizonte para conhecer e dirimir quaisquer dúvidas ou discussões oriundas deste Contrato, com renúncia a qualquer outro, por mais especial e privilegiado que seja.</p>
+
+        <p style={pStyle}>E assim, estando as Partes de comum acordo quanto ao contratado, dando-o por justo e acertado, assinam o presente Contrato digitalmente.</p>
+
+        <p id="ae-assinatura" style={pStyle}>{ph(d.vig_local_data, "Belo Horizonte, __ de ________ de ____")}</p>
+
+        <div style={{ marginTop: 40, textAlign: "center" }}>
+          <div style={{ width: "60%", margin: "0 auto", borderTop: "1px solid #333", paddingTop: 8 }}>
+            <b>{ph(d.emp_razao_nova)}</b><br />
+            {ph(d.sc_nome)}<br />
+            Sócia Administradora
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ═══ CONTRACT EDITOR (Form + Preview) ═══ */
 function ContractEditor({ data, setData, fieldGroups, clauseItems, onExportDOCX, onExportPDF, PaperComponent }) {
   return (
@@ -3448,6 +3807,7 @@ export default function App() {
   const [dataAlteracao, setDataAlteracao] = useState({ ...DEFAULT_DATA_ALTERACAO });
   const [dataDistrato, setDataDistrato] = useState({ ...DEFAULT_DATA_DISTRATO });
   const [dataParalisacao, setDataParalisacao] = useState({ ...DEFAULT_DATA_PARALISACAO });
+  const [dataAlteracaoEssencial, setDataAlteracaoEssencial] = useState({ ...DEFAULT_DATA_ALTERACAOESSENCIAL });
   const [view, setView] = useState("prestacao");
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
@@ -3468,6 +3828,7 @@ export default function App() {
     alteracao: { data: dataAlteracao, setData: setDataAlteracao, fieldGroups: FIELD_GROUPS_ALTERACAO, clauseItems: CLAUSE_ITEMS_ALTERACAO, exportDOCX: () => exportDOCXAlteracao(dataAlteracao), exportPDF: () => exportPDFAlteracao(dataAlteracao), Paper: ContractPaperAlteracao },
     distrato: { data: dataDistrato, setData: setDataDistrato, fieldGroups: FIELD_GROUPS_DISTRATO, clauseItems: CLAUSE_ITEMS_DISTRATO, exportDOCX: () => exportDOCXDistrato(dataDistrato), exportPDF: () => exportPDFDistrato(dataDistrato), Paper: ContractPaperDistrato },
     paralisacao: { data: dataParalisacao, setData: setDataParalisacao, fieldGroups: FIELD_GROUPS_PARALISACAO, clauseItems: CLAUSE_ITEMS_PARALISACAO, exportDOCX: () => exportDOCXParalisacao(dataParalisacao), exportPDF: () => exportPDFParalisacao(dataParalisacao), Paper: ContractPaperParalisacao },
+    alteracaoessencial: { data: dataAlteracaoEssencial, setData: setDataAlteracaoEssencial, fieldGroups: FIELD_GROUPS_ALTERACAOESSENCIAL, clauseItems: CLAUSE_ITEMS_ALTERACAOESSENCIAL, exportDOCX: () => exportDOCXAlteracaoEssencial(dataAlteracaoEssencial), exportPDF: () => exportPDFAlteracaoEssencial(dataAlteracaoEssencial), Paper: ContractPaperAlteracaoEssencial },
   };
   const cfg = configs[view] || configs.prestacao;
   const currentData = cfg.data;
