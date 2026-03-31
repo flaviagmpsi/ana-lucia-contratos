@@ -1222,6 +1222,31 @@ const DEFAULT_DATA_ALTERACAOESSENCIAL = {
   emp_data_inicio: "17/09/2009",
   // Assinatura
   vig_local_data: "Belo Horizonte, 24 de Outubro de 2023",
+  // Atos Constitutivos — Preâmbulo
+  atos_preambulo: "CONTABILIDADE ESSENCIAL LTDA, sociedade empresaria limitada, inscrita no CNPJ sob nº 11.154.925/0001-03, registro no Conselho Regional de Contabilidade sob o nº MG-012.577/O, estabelecida à rua Anunciação, nº 218. bairro Jardim São José, BH/MG, CEP 30.820-160, representada pela única sócia, Ana Lúcia Gonçalves, brasileira, divorciada, Técnico em Contabilidade, nascida em 19/07/1969, natural de Pará de Minas /MG, portadora da Cédula de Identidade RG/MG n° 5.021.848, SSP/MG, inscrita no CPF sob n° 762.792.436-72, inscrita no Conselho Regional de Contabilidade sob nº MG-053.455/O, residente à rua Anunciação, nº 2018. bairro Jardim São José, BH/MG,CEP 30.820-160, registrada na Junta Comercial de Minas Gerais sob o NIRE nº 31109925543 em 17/09/2009 e alteração arquivada sob nº 5157163 em 02/10/2013, regida por este Contrato Social, pelas disposições legais aplicáveis às sociedades limitadas na Lei Federal 10.406 de 10 de janeiro de 2002, conforme cláusulas a seguir:",
+  // Atos Constitutivos — Cap. I: Denominação, Sede, Objeto e Duração
+  atos_cl1: "A sociedade empresaria limitada, rege sob a razão social de CONTABILIDADE ESSENCIAL LTDA e nome fantasia, ESSENCIAL CONTABILIDADE.",
+  atos_cl2: "A Sociedade tem sede e foro à rua Anunciação, nº 218, bairro Jardim São José, BH/MG, CEP. 30820-160 e poderá abrir e encerrar filiais, em qualquer localidade do País.",
+  atos_cl3: "O objeto social é a prestação de serviços de atividade de contabilidade, como abertura, alteração contratual e baixa de empresas, bem como a contabilização dos setores fiscal, contabil, trabalhista e previdenciario. Execução das obrigações acessorias no âmbito federal, estadual e municipal.",
+  atos_cl4: "A Sociedade iniciou suas atividades em 17/09/2009 e terá prazo de duração indeterminado.",
+  // Atos Constitutivos — Cap. II: Capital Social
+  atos_cl5: "O capital social da Sociedade é de R$ R$20.000,00 (Vinte mil reais), no valor nominal de R$ 1.000,00 (um mil real) cada uma, totalmente subscrito e integralizado em moeda corrente nacional pelo único sócio.",
+  atos_cl6: "A Sociedade é uma sociedade empresaria limitada nos termos do parágrafo primeiro do Art. 1.052 do Código Civil.",
+  // Atos Constitutivos — Cap. III: Administração e Declaração do Sócio
+  atos_cl7: "A administração da Sociedade será exercida pelo única sócia Ana Lúcia Gonçalves, ja qualificada acima, quem incumbe a representação ativa e passiva da Sociedade, judicial ou extrajudicialmente, e podendo praticar todos os atos compreendidos no objeto social, sempre no interesse da Sociedade, sendo vedado, todavia, a vinculação do patrimônio social em negócios estranhos à atividade da Sociedade, em especial configurar como avalista, realizar endossos e/ou depositar valores a título de caução.",
+  atos_cl8: "A sócia, declara, sob as penas da lei, inclusive, que são verídicas todas as informações prestadas neste Contrato Social, e quanto ao disposto no Art. 299 do Código Penal, não estar impedido de exercer atividade empresária e não possuir outro registro como Empresário Individual no País.",
+  atos_cl9: "As procurações da sociedade serão outorgadas pela única sócia e administradora devendo sempre especificar os poderes conferidos e, com exceção daquelas outorgadas para fins judiciais, terão prazo de validade limitado em 1 (um) ano.",
+  atos_cl10: "A administradora da sociedade declara, sob as penas da lei, que não está impedido de exercer a administração da Sociedade, por lei especial, ou em virtude de condenação criminal, ou por se encontrar sob os efeitos dela, a pena que vede, ainda que temporariamente, o acesso a cargos públicos; ou por crime falimentar, de prevaricação, peita ou suborno, concussão, peculato, ou contra a economia popular, contra o sistema financeiro nacional, contra normas de defesa da concorrência, contra as relações de consumo, fé pública, ou a propriedade.",
+  // Atos Constitutivos — Cap. IV: Deliberações Sociais
+  atos_cl11: "As deliberações sociais serão tomadas sempre pela sua única sócia.",
+  atos_cl12: "Dispensam-se as formalidades de convocação por ser constituída por única sócia.",
+  atos_cl13: "Dos trabalhos e deliberações será lavrada ata que deverá ser assinada pelo sua única sócia.",
+  // Atos Constitutivos — Cap. V: Exercício Social, Balanço e Lucros
+  atos_cl14: "O exercício social se encerra no dia 31 de dezembro de cada ano, data em que serão levantadas as demonstrações financeiras do exercício, com observância das prescrições legais. A Sociedade distribuirá seus lucros, se houver, mediante aprovação de sua única sócia.",
+  // Atos Constitutivos — Cap. VI: Continuidade da Sociedade
+  atos_cl15: "No caso de falecimento ou interdição da única sócia, a empresa poderá continuar as suas atividades com os herdeiros, sucessores e/ou sucessores do incapaz. Na hipótese de não ser possível ou na ausência de interesse destes, os valores pendentes devem ser apurados e liquidados com base na situação patrimonial da empresa, à data da resolução, verificada em balanço especialmente levantado.",
+  // Atos Constitutivos — Cap. VII: Foro
+  atos_cl16: "Em caso de desavenças em razão deste Contrato Social, é estabelecido o foro da Comarca de Belo Horizonte para conhecer e dirimir quaisquer dúvidas ou discussões oriundas deste Contrato, com renúncia a qualquer outro, por mais especial e privilegiado que seja.",
 };
 
 const FIELD_GROUPS_ALTERACAOESSENCIAL = [
@@ -1290,6 +1315,71 @@ const FIELD_GROUPS_ALTERACAOESSENCIAL = [
     fields: [
       { id: "emp_data_inicio", label: "Início das Atividades", type: "text", ph: "Ex: 17/09/2009" },
       { id: "vig_local_data", label: "Local e Data", type: "text", ph: "Ex: Belo Horizonte, 24 de Outubro de 2023" },
+    ]
+  },
+  {
+    title: "Atos Constitutivos — Preâmbulo",
+    icon: "📜",
+    fields: [
+      { id: "atos_preambulo", label: "Texto do Preâmbulo", type: "textarea", ph: "Texto introdutório dos atos constitutivos" },
+    ]
+  },
+  {
+    title: "Atos — Cap. I: Denominação, Sede, Objeto e Duração",
+    icon: "🏛️",
+    fields: [
+      { id: "atos_cl1", label: "Cláusula 1 — Razão Social", type: "textarea", ph: "Texto da cláusula 1" },
+      { id: "atos_cl2", label: "Cláusula 2 — Sede e Foro", type: "textarea", ph: "Texto da cláusula 2" },
+      { id: "atos_cl3", label: "Cláusula 3 — Objeto Social", type: "textarea", ph: "Texto da cláusula 3" },
+      { id: "atos_cl4", label: "Cláusula 4 — Início e Duração", type: "textarea", ph: "Texto da cláusula 4" },
+    ]
+  },
+  {
+    title: "Atos — Cap. II: Capital Social",
+    icon: "💰",
+    fields: [
+      { id: "atos_cl5", label: "Cláusula 5 — Capital Social", type: "textarea", ph: "Texto da cláusula 5" },
+      { id: "atos_cl6", label: "Cláusula 6 — Tipo Societário", type: "textarea", ph: "Texto da cláusula 6" },
+    ]
+  },
+  {
+    title: "Atos — Cap. III: Administração",
+    icon: "⚙️",
+    fields: [
+      { id: "atos_cl7", label: "Cláusula 7 — Administração", type: "textarea", ph: "Texto da cláusula 7" },
+      { id: "atos_cl8", label: "Cláusula 8 — Declaração da Sócia", type: "textarea", ph: "Texto da cláusula 8" },
+      { id: "atos_cl9", label: "Cláusula 9 — Procurações", type: "textarea", ph: "Texto da cláusula 9" },
+      { id: "atos_cl10", label: "Cláusula 10 — Impedimentos", type: "textarea", ph: "Texto da cláusula 10" },
+    ]
+  },
+  {
+    title: "Atos — Cap. IV: Deliberações Sociais",
+    icon: "📋",
+    fields: [
+      { id: "atos_cl11", label: "Cláusula 11 — Deliberações", type: "textarea", ph: "Texto da cláusula 11" },
+      { id: "atos_cl12", label: "Cláusula 12 — Convocação", type: "textarea", ph: "Texto da cláusula 12" },
+      { id: "atos_cl13", label: "Cláusula 13 — Ata", type: "textarea", ph: "Texto da cláusula 13" },
+    ]
+  },
+  {
+    title: "Atos — Cap. V: Exercício Social",
+    icon: "📊",
+    fields: [
+      { id: "atos_cl14", label: "Cláusula 14 — Exercício e Lucros", type: "textarea", ph: "Texto da cláusula 14" },
+    ]
+  },
+  {
+    title: "Atos — Cap. VI: Continuidade",
+    icon: "🔗",
+    fields: [
+      { id: "atos_cl15", label: "Cláusula 15 — Continuidade", type: "textarea", ph: "Texto da cláusula 15" },
+    ]
+  },
+  {
+    title: "Atos — Cap. VII: Foro",
+    icon: "⚖️",
+    fields: [
+      { id: "atos_cl16", label: "Cláusula 16 — Foro", type: "textarea", ph: "Texto da cláusula 16" },
     ]
   },
 ];
@@ -2454,53 +2544,53 @@ ${p(`${b("Cláusula 4.")} O objeto social é ${_(d.emp_objeto)}.`)}
 <p style="text-align:center;font-size:11pt;margin-bottom:2pt;">NIRE ${_(d.emp_nire)}</p>
 <p style="text-align:center;font-size:11pt;margin-bottom:20pt;">EM ${_(d.emp_data_registro)}</p>
 
-${p(`${b(_(d.emp_razao_nova))}, sociedade empresaria limitada, inscrita no CNPJ sob nº ${_(d.emp_cnpj)}, registro no Conselho Regional de Contabilidade sob o nº ${_(d.emp_crc)}, estabelecida à ${_(d.emp_endereco)}, CEP ${_(d.emp_cep)}, representada pela única sócia, ${_(d.sc_nome)}, ${_(d.sc_nacionalidade)}, ${_(d.sc_estado_civil)}, ${_(d.sc_profissao)}, nascida em ${_(d.sc_nascimento)}, natural de ${_(d.sc_naturalidade)}, portadora da Cédula de Identidade RG/MG n° ${_(d.sc_rg)}, ${_(d.sc_rg_orgao)}, inscrita no CPF sob n° ${_(d.sc_cpf)}, inscrita no Conselho Regional de Contabilidade sob nº ${_(d.sc_crc)}, residente à ${_(d.sc_endereco_atos)},CEP ${_(d.sc_cep)}, registrada na Junta Comercial de Minas Gerais sob o NIRE nº ${_(d.emp_nire)} em ${_(d.emp_data_registro)} e alteração arquivada sob nº ${_(d.alt_numero)} em ${_(d.alt_data)}, regida por este Contrato Social, pelas disposições legais aplicáveis às sociedades limitadas na Lei Federal 10.406 de 10 de janeiro de 2002, conforme cláusulas a seguir:`)}
+${p(_(d.atos_preambulo))}
 
 ${sec("CAPÍTULO I — DENOMINAÇÃO, SEDE, OBJETO E DURAÇÃO")}
 
-${p(`${b("Cláusula 1.")} A sociedade empresaria limitada, rege sob a razão social de ${b(_(d.emp_razao_nova))} e nome fantasia, ${b(_(d.emp_nome_fantasia))}.`)}
+${p(`${b("Cláusula 1.")} ${_(d.atos_cl1)}`)}
 
-${p(`${b("Cláusula 2.")} A Sociedade tem sede e foro à ${_(d.emp_endereco)}, CEP. ${_(d.emp_cep).replace(/[.\-]/g, "").replace(/(\d{5})(\d{3})/, "$1-$2")} e poderá abrir e encerrar filiais, em qualquer localidade do País.`)}
+${p(`${b("Cláusula 2.")} ${_(d.atos_cl2)}`)}
 
-${p(`${b("Cláusula 3.")} O objeto social é ${_(d.emp_objeto)}.`)}
+${p(`${b("Cláusula 3.")} ${_(d.atos_cl3)}`)}
 
-${p(`${b("Cláusula 4.")} A Sociedade iniciou suas atividades em ${_(d.emp_data_inicio)} e terá prazo de duração indeterminado.`)}
+${p(`${b("Cláusula 4.")} ${_(d.atos_cl4)}`)}
 
 ${sec("CAPÍTULO II — CAPITAL SOCIAL")}
 
-${p(`${b("Cláusula 5.")} O capital social da Sociedade é de R$ R$${_(d.cap_valor)} (${_(d.cap_valor_extenso)}), no valor nominal de R$ ${_(d.cap_valor_quota)} (${_(d.cap_valor_quota_extenso)}) cada uma, totalmente subscrito e integralizado em moeda corrente nacional pelo único sócio.`)}
+${p(`${b("Cláusula 5.")} ${_(d.atos_cl5)}`)}
 
-${p(`${b("Cláusula 6.")} A Sociedade é uma sociedade empresaria limitada nos termos do parágrafo primeiro do Art. 1.052 do Código Civil.`)}
+${p(`${b("Cláusula 6.")} ${_(d.atos_cl6)}`)}
 
 ${sec("CAPÍTULO III — ADMINISTRAÇÃO E DECLARAÇÃO DO SÓCIO")}
 
-${p(`${b("Cláusula 7.")} A administração da Sociedade será exercida pelo única sócia ${b(_(d.sc_nome))}, ja qualificada acima, quem incumbe a representação ativa e passiva da Sociedade, judicial ou extrajudicialmente, e podendo praticar todos os atos compreendidos no objeto social, sempre no interesse da Sociedade, sendo vedado, todavia, a vinculação do patrimônio social em negócios estranhos à atividade da Sociedade, em especial configurar como avalista, realizar endossos e/ou depositar valores a título de caução.`)}
+${p(`${b("Cláusula 7.")} ${_(d.atos_cl7)}`)}
 
-${p(`${b("Cláusula 8.")} A sócia, declara, sob as penas da lei, inclusive, que são verídicas todas as informações prestadas neste Contrato Social, e quanto ao disposto no Art. 299 do Código Penal, não estar impedido de exercer atividade empresária e não possuir outro registro como Empresário Individual no País.`)}
+${p(`${b("Cláusula 8.")} ${_(d.atos_cl8)}`)}
 
-${p(`${b("Cláusula 9.")} As procurações da sociedade serão outorgadas pela única sócia e administradora devendo sempre especificar os poderes conferidos e, com exceção daquelas outorgadas para fins judiciais, terão prazo de validade limitado em 1 (um) ano.`)}
+${p(`${b("Cláusula 9.")} ${_(d.atos_cl9)}`)}
 
-${p(`${b("Cláusula 10.")} A administradora da sociedade declara, sob as penas da lei, que não está impedido de exercer a administração da Sociedade, por lei especial, ou em virtude de condenação criminal, ou por se encontrar sob os efeitos dela, a pena que vede, ainda que temporariamente, o acesso a cargos públicos; ou por crime falimentar, de prevaricação, peita ou suborno, concussão, peculato, ou contra a economia popular, contra o sistema financeiro nacional, contra normas de defesa da concorrência, contra as relações de consumo, fé pública, ou a propriedade.`)}
+${p(`${b("Cláusula 10.")} ${_(d.atos_cl10)}`)}
 
 ${sec("CAPÍTULO IV — DAS DELIBERAÇÕES SOCIAIS")}
 
-${p(`${b("Cláusula 11.")} As deliberações sociais serão tomadas sempre pela sua única sócia.`)}
+${p(`${b("Cláusula 11.")} ${_(d.atos_cl11)}`)}
 
-${p(`${b("Cláusula 12.")} Dispensam-se as formalidades de convocação por ser constituída por única sócia.`)}
+${p(`${b("Cláusula 12.")} ${_(d.atos_cl12)}`)}
 
-${p(`${b("Cláusula 13.")} Dos trabalhos e deliberações será lavrada ata que deverá ser assinada pelo sua única sócia.`)}
+${p(`${b("Cláusula 13.")} ${_(d.atos_cl13)}`)}
 
 ${sec("CAPÍTULO V — DO EXERCÍCIO SOCIAL, BALANÇO E LUCROS")}
 
-${p(`${b("Cláusula 14.")} O exercício social se encerra no dia 31 de dezembro de cada ano, data em que serão levantadas as demonstrações financeiras do exercício, com observância das prescrições legais. A Sociedade distribuirá seus lucros, se houver, mediante aprovação de sua única sócia.`)}
+${p(`${b("Cláusula 14.")} ${_(d.atos_cl14)}`)}
 
 ${sec("CAPÍTULO VI — DA CONTINUIDADE DA SOCIEDADE")}
 
-${p(`${b("Cláusula 15.")} No caso de falecimento ou interdição da única sócia, a empresa poderá continuar as suas atividades com os herdeiros, sucessores e/ou sucessores do incapaz. Na hipótese de não ser possível ou na ausência de interesse destes, os valores pendentes devem ser apurados e liquidados com base na situação patrimonial da empresa, à data da resolução, verificada em balanço especialmente levantado.`)}
+${p(`${b("Cláusula 15.")} ${_(d.atos_cl15)}`)}
 
 ${sec("CAPÍTULO VII — FORO")}
 
-${p(`${b("Cláusula 16.")} Em caso de desavenças em razão deste Contrato Social, é estabelecido o foro da Comarca de Belo Horizonte para conhecer e dirimir quaisquer dúvidas ou discussões oriundas deste Contrato, com renúncia a qualquer outro, por mais especial e privilegiado que seja.`)}
+${p(`${b("Cláusula 16.")} ${_(d.atos_cl16)}`)}
 
 ${p("E assim, estando as Partes de comum acordo quanto ao contratado, dando-o por justo e acertado, assinam o presente Contrato digitalmente.")}
 
@@ -3626,55 +3716,53 @@ function ContractPaperAlteracaoEssencial({ data }) {
         <p style={{ textAlign: "center", fontSize: "11pt", marginBottom: 2 }}>NIRE {ph(d.emp_nire)}</p>
         <p style={{ textAlign: "center", fontSize: "11pt", marginBottom: 20 }}>EM {ph(d.emp_data_registro)}</p>
 
-        <p style={pStyle}>
-          <b>{ph(d.emp_razao_nova)}</b>, sociedade empresaria limitada, inscrita no CNPJ sob nº {ph(d.emp_cnpj)}, registro no Conselho Regional de Contabilidade sob o nº {ph(d.emp_crc)}, estabelecida à {ph(d.emp_endereco)}, CEP {ph(d.emp_cep)}, representada pela única sócia, {ph(d.sc_nome)}, {ph(d.sc_nacionalidade)}, {ph(d.sc_estado_civil)}, {ph(d.sc_profissao)}, nascida em {ph(d.sc_nascimento)}, natural de {ph(d.sc_naturalidade)}, portadora da Cédula de Identidade RG/MG n° {ph(d.sc_rg)}, {ph(d.sc_rg_orgao)}, inscrita no CPF sob n° {ph(d.sc_cpf)}, inscrita no Conselho Regional de Contabilidade sob nº {ph(d.sc_crc)}, residente à {ph(d.sc_endereco_atos)},CEP {ph(d.sc_cep)}, registrada na Junta Comercial de Minas Gerais sob o NIRE nº {ph(d.emp_nire)} em {ph(d.emp_data_registro)} e alteração arquivada sob nº {ph(d.alt_numero)} em {ph(d.alt_data)}, regida por este Contrato Social, pelas disposições legais aplicáveis às sociedades limitadas na Lei Federal 10.406 de 10 de janeiro de 2002, conforme cláusulas a seguir:
-        </p>
+        <p style={pStyle}>{ph(d.atos_preambulo)}</p>
 
         <h2 id="ae-denominacao-atos" style={secStyle}>CAPÍTULO I — DENOMINAÇÃO, SEDE, OBJETO E DURAÇÃO</h2>
 
-        <p style={pStyle}><b>Cláusula 1.</b> A sociedade empresaria limitada, rege sob a razão social de <b>{ph(d.emp_razao_nova)}</b> e nome fantasia, <b>{ph(d.emp_nome_fantasia)}</b>.</p>
+        <p style={pStyle}><b>Cláusula 1.</b> {ph(d.atos_cl1)}</p>
 
-        <p style={pStyle}><b>Cláusula 2.</b> A Sociedade tem sede e foro à {ph(d.emp_endereco)}, CEP. {ph(d.emp_cep)} e poderá abrir e encerrar filiais, em qualquer localidade do País.</p>
+        <p style={pStyle}><b>Cláusula 2.</b> {ph(d.atos_cl2)}</p>
 
-        <p style={pStyle}><b>Cláusula 3.</b> O objeto social é {ph(d.emp_objeto)}.</p>
+        <p style={pStyle}><b>Cláusula 3.</b> {ph(d.atos_cl3)}</p>
 
-        <p style={pStyle}><b>Cláusula 4.</b> A Sociedade iniciou suas atividades em {ph(d.emp_data_inicio)} e terá prazo de duração indeterminado.</p>
+        <p style={pStyle}><b>Cláusula 4.</b> {ph(d.atos_cl4)}</p>
 
         <h2 id="ae-capital" style={secStyle}>CAPÍTULO II — CAPITAL SOCIAL</h2>
 
-        <p style={pStyle}><b>Cláusula 5.</b> O capital social da Sociedade é de R$ R${ph(d.cap_valor)} ({ph(d.cap_valor_extenso)}), no valor nominal de R$ {ph(d.cap_valor_quota)} ({ph(d.cap_valor_quota_extenso)}) cada uma, totalmente subscrito e integralizado em moeda corrente nacional pelo único sócio.</p>
+        <p style={pStyle}><b>Cláusula 5.</b> {ph(d.atos_cl5)}</p>
 
-        <p style={pStyle}><b>Cláusula 6.</b> A Sociedade é uma sociedade empresaria limitada nos termos do parágrafo primeiro do Art. 1.052 do Código Civil.</p>
+        <p style={pStyle}><b>Cláusula 6.</b> {ph(d.atos_cl6)}</p>
 
         <h2 id="ae-admin" style={secStyle}>CAPÍTULO III — ADMINISTRAÇÃO E DECLARAÇÃO DO SÓCIO</h2>
 
-        <p style={pStyle}><b>Cláusula 7.</b> A administração da Sociedade será exercida pelo única sócia <b>{ph(d.sc_nome)}</b>, ja qualificada acima, quem incumbe a representação ativa e passiva da Sociedade, judicial ou extrajudicialmente, e podendo praticar todos os atos compreendidos no objeto social, sempre no interesse da Sociedade, sendo vedado, todavia, a vinculação do patrimônio social em negócios estranhos à atividade da Sociedade, em especial configurar como avalista, realizar endossos e/ou depositar valores a título de caução.</p>
+        <p style={pStyle}><b>Cláusula 7.</b> {ph(d.atos_cl7)}</p>
 
-        <p style={pStyle}><b>Cláusula 8.</b> A sócia, declara, sob as penas da lei, inclusive, que são verídicas todas as informações prestadas neste Contrato Social, e quanto ao disposto no Art. 299 do Código Penal, não estar impedido de exercer atividade empresária e não possuir outro registro como Empresário Individual no País.</p>
+        <p style={pStyle}><b>Cláusula 8.</b> {ph(d.atos_cl8)}</p>
 
-        <p style={pStyle}><b>Cláusula 9.</b> As procurações da sociedade serão outorgadas pela única sócia e administradora devendo sempre especificar os poderes conferidos e, com exceção daquelas outorgadas para fins judiciais, terão prazo de validade limitado em 1 (um) ano.</p>
+        <p style={pStyle}><b>Cláusula 9.</b> {ph(d.atos_cl9)}</p>
 
-        <p style={pStyle}><b>Cláusula 10.</b> A administradora da sociedade declara, sob as penas da lei, que não está impedido de exercer a administração da Sociedade, por lei especial, ou em virtude de condenação criminal, ou por se encontrar sob os efeitos dela, a pena que vede, ainda que temporariamente, o acesso a cargos públicos; ou por crime falimentar, de prevaricação, peita ou suborno, concussão, peculato, ou contra a economia popular, contra o sistema financeiro nacional, contra normas de defesa da concorrência, contra as relações de consumo, fé pública, ou a propriedade.</p>
+        <p style={pStyle}><b>Cláusula 10.</b> {ph(d.atos_cl10)}</p>
 
         <h2 id="ae-deliberacoes" style={secStyle}>CAPÍTULO IV — DAS DELIBERAÇÕES SOCIAIS</h2>
 
-        <p style={pStyle}><b>Cláusula 11.</b> As deliberações sociais serão tomadas sempre pela sua única sócia.</p>
+        <p style={pStyle}><b>Cláusula 11.</b> {ph(d.atos_cl11)}</p>
 
-        <p style={pStyle}><b>Cláusula 12.</b> Dispensam-se as formalidades de convocação por ser constituída por única sócia.</p>
+        <p style={pStyle}><b>Cláusula 12.</b> {ph(d.atos_cl12)}</p>
 
-        <p style={pStyle}><b>Cláusula 13.</b> Dos trabalhos e deliberações será lavrada ata que deverá ser assinada pelo sua única sócia.</p>
+        <p style={pStyle}><b>Cláusula 13.</b> {ph(d.atos_cl13)}</p>
 
         <h2 id="ae-exercicio" style={secStyle}>CAPÍTULO V — DO EXERCÍCIO SOCIAL, BALANÇO E LUCROS</h2>
 
-        <p style={pStyle}><b>Cláusula 14.</b> O exercício social se encerra no dia 31 de dezembro de cada ano, data em que serão levantadas as demonstrações financeiras do exercício, com observância das prescrições legais. A Sociedade distribuirá seus lucros, se houver, mediante aprovação de sua única sócia.</p>
+        <p style={pStyle}><b>Cláusula 14.</b> {ph(d.atos_cl14)}</p>
 
         <h2 id="ae-continuidade" style={secStyle}>CAPÍTULO VI — DA CONTINUIDADE DA SOCIEDADE</h2>
 
-        <p style={pStyle}><b>Cláusula 15.</b> No caso de falecimento ou interdição da única sócia, a empresa poderá continuar as suas atividades com os herdeiros, sucessores e/ou sucessores do incapaz. Na hipótese de não ser possível ou na ausência de interesse destes, os valores pendentes devem ser apurados e liquidados com base na situação patrimonial da empresa, à data da resolução, verificada em balanço especialmente levantado.</p>
+        <p style={pStyle}><b>Cláusula 15.</b> {ph(d.atos_cl15)}</p>
 
         <h2 id="ae-foro" style={secStyle}>CAPÍTULO VII — FORO</h2>
 
-        <p style={pStyle}><b>Cláusula 16.</b> Em caso de desavenças em razão deste Contrato Social, é estabelecido o foro da Comarca de Belo Horizonte para conhecer e dirimir quaisquer dúvidas ou discussões oriundas deste Contrato, com renúncia a qualquer outro, por mais especial e privilegiado que seja.</p>
+        <p style={pStyle}><b>Cláusula 16.</b> {ph(d.atos_cl16)}</p>
 
         <p style={pStyle}>E assim, estando as Partes de comum acordo quanto ao contratado, dando-o por justo e acertado, assinam o presente Contrato digitalmente.</p>
 
@@ -3716,7 +3804,7 @@ function ContractEditor({ data, setData, fieldGroups, clauseItems, onExportDOCX,
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 14px" }}>
               {group.fields.map(f => (
-                <div key={f.id} style={f.id.includes("endereco") || f.id.includes("razao") ? { gridColumn: "1/-1" } : {}}>
+                <div key={f.id} style={f.id.includes("endereco") || f.id.includes("razao") || f.type === "textarea" ? { gridColumn: "1/-1" } : {}}>
                   <Field field={f} value={data[f.id]} onChange={val => setData(prev => ({ ...prev, [f.id]: val }))} />
                 </div>
               ))}
