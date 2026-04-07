@@ -30,18 +30,18 @@ Pushes to `main` auto-deploy to GitHub Pages via `.github/workflows/deploy.yml` 
 
 ## Architecture
 
-Single-file React app (~3600 lines) in `src/app.jsx`. No external components or modules.
+Single-file React app (~4000 lines) in `src/app.jsx`. No external components or modules.
 
-**Current contract types (8):** prestacao, parceria, social, cabeleireiro, inatividade, alteracao, distrato, paralisacao — defined in `CONTRACT_TYPES` array (~line 1184).
+**Current contract types (9):** prestacao, parceria, social, cabeleireiro, inatividade, alteracao, distrato, paralisacao, alteracaoessencial — defined in `CONTRACT_TYPES` array (~line 1315).
 
-**Data layer** (per contract type, suffixed by type name e.g. `_PRESTACAO`, `_PARCERIA`, `_SOCIAL`, `_CABELEIREIRO`, `_INATIVIDADE`, `_ALTERACAO`, `_DISTRATO`, `_PARALISACAO`):
+**Data layer** (per contract type, suffixed by type name e.g. `_PRESTACAO`, `_PARCERIA`, `_SOCIAL`, `_CABELEIREIRO`, `_INATIVIDADE`, `_ALTERACAO`, `_DISTRATO`, `_PARALISACAO`, `_ALTERACAOESSENCIAL`):
 - `DEFAULT_DATA_*` — default form values; contratada fields pre-filled with Ana Lúcia's info, contratante fields empty
 - `FIELD_GROUPS_*` — array of `{ title, icon, fields[] }` driving the form UI
 - `CLAUSE_ITEMS_*` — sidebar clause navigation items with `{ icon, label, id }` where `id` matches an element in the preview
 
 **Registry:**
 - `CONTRACT_TYPES` — array of `{ id, label, icon }` for available tabs; add new contracts here
-- `configs` object inside `App()` (~line 3460) — maps each contract type id to its `{ data, setData, fieldGroups, clauseItems, exportDOCX, exportPDF, Paper }`. This is the central wiring point.
+- `configs` object inside `App()` (~line 3822) — maps each contract type id to its `{ data, setData, fieldGroups, clauseItems, exportDOCX, exportPDF, Paper }`. This is the central wiring point.
 
 **Dual rendering (must stay in sync):**
 - `buildContractHTML*(d)` — generates an HTML string used for DOCX/PDF export

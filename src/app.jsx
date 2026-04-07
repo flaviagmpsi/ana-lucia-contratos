@@ -489,6 +489,8 @@ const DEFAULT_DATA_CABELEIREIRO = {
   ne_cep_sede: "",
   ne_objeto: "",
   ne_porte: "ME",
+  // Cláusula Primeira (editável)
+  clausula_primeira: "",
   // Capital
   cap_total: "",
   cap_total_extenso: "",
@@ -545,6 +547,7 @@ const FIELD_GROUPS_CABELEIREIRO = [
       { id: "ne_sede", label: "Nova Sede (Endereço)", type: "text", ph: "Rua, nº, bairro, cidade/UF" },
       { id: "ne_cep_sede", label: "CEP da Nova Sede", type: "text", ph: "00.000-000" },
       { id: "ne_objeto", label: "Objeto Social", type: "text", ph: "Ex: prestação de serviços de cabeleireiro, estética e cuidados com a beleza" },
+      { id: "clausula_primeira", label: "Cláusula Primeira (texto livre)", type: "textarea", ph: "Deixe em branco para usar o texto padrão: \"A razão Social passa a ser [razão social].\"" },
       { id: "ne_porte", label: "Porte", type: "select", opts: [
         { value: "MEI", label: "Microempreendedor Individual (MEI)" },
         { value: "ME", label: "Microempresa (ME)" },
@@ -1314,12 +1317,12 @@ const CLAUSE_ITEMS_ALTERACAOESSENCIAL = [
    ════════════════════════════════════════════ */
 const CONTRACT_TYPES = [
   { id: "prestacao", label: "Prestação de Serviços Contábeis", icon: "📊" },
-  { id: "parceria", label: "Parceria Salão (Lei 13.352/16)", icon: "💇" },
+  { id: "parceria", label: "Contrato Salão Parceiro", icon: "💇" },
   { id: "social", label: "Contrato Social", icon: "🏢" },
   { id: "cabeleireiro", label: "Contrato Social Cabeleireiro", icon: "✂️" },
   { id: "inatividade", label: "Alteração Contratual Inatividade", icon: "⏸️" },
-  { id: "alteracao", label: "Alteração Contratual", icon: "🔄" },
-  { id: "distrato", label: "Termo de Distrato", icon: "📝" },
+  { id: "alteracao", label: "Alteração Contratual Capital Social", icon: "🔄" },
+  { id: "distrato", label: "Termo de Distrato Salão Parceiro", icon: "📝" },
   { id: "paralisacao", label: "Comunicação de Paralisação", icon: "🔇" },
   { id: "alteracaoessencial", label: "Alteração Contratual Essencial", icon: "🏛️" },
 ];
@@ -1673,10 +1676,10 @@ ${p(`${_(d.vig_cidade_uf)}, ${_(d.vig_dia)} de ${_(d.vig_mes)} de ${_(d.vig_ano)
 
 <div style="margin-top:40pt;display:flex;justify-content:space-between;gap:40pt;">
   <div style="flex:1;text-align:center;border-top:1pt solid #333;padding-top:8pt;">
-    <b>SALÃO-PARCEIRO</b>
+    <b>SALÃO-PARCEIRO</b><br/>${_(d.sp_razao)}
   </div>
   <div style="flex:1;text-align:center;border-top:1pt solid #333;padding-top:8pt;">
-    <b>PROFISSIONAL-PARCEIRO</b>
+    <b>PROFISSIONAL-PARCEIRO</b><br/>${_(d.pp_nome)}
   </div>
 </div>
 
@@ -1883,7 +1886,7 @@ ${p(`${b(_(d.sc_nome).toUpperCase())}, ${_(d.sc_nacionalidade)}, ${_(d.sc_estado
 ${p("Neste mesmo ato informa-se o valor do capital social da empresa com a distribuição das quotas citadas, objeto social, nome empresarial, endereço e Enquadramento quanto ao Porte, doravante, pelo presente a qual se regerá;")}
 
 ${sec("CLÁUSULA PRIMEIRA")}
-${p(`A razão Social passa a ser ${b(_(d.ne_razao))}.`)}
+${p(d.clausula_primeira || `A razão Social passa a ser ${b(_(d.ne_razao))}.`)}
 
 ${sec("CLÁUSULA SEGUNDA")}
 ${p(`O Capital Social é de R$ ${_(d.cap_total)}(${_(d.cap_total_extenso)}), divididos em ${_(d.cap_num_quotas)} (${_(d.cap_num_quotas_extenso)}) quotas no valor de R$ ${_(d.cap_valor_quota)}(${_(d.cap_valor_quota_extenso)}) cada, com a seguinte distribuição:`)}
@@ -2571,6 +2574,19 @@ function Field({ field, value, onChange }) {
       </div>
     );
   }
+  if (field.type === "textarea") {
+    return (
+      <div style={{ marginBottom: 14 }}>
+        <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: C.muted, marginBottom: 4, fontFamily: "'DM Sans', sans-serif" }}>
+          {field.label}
+        </label>
+        <textarea style={{ ...base, minHeight: 80, resize: "vertical" }} placeholder={field.ph} value={value}
+          onChange={e => onChange(e.target.value)}
+          onFocus={() => setFocused(true)} onBlur={() => setFocused(false)} />
+        {field.hint && <div style={{ fontSize: 11, color: C.light, marginTop: 3, fontStyle: "italic", lineHeight: 1.4 }}>{field.hint}</div>}
+      </div>
+    );
+  }
   return (
     <div style={{ marginBottom: 14 }}>
       <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: C.muted, marginBottom: 4, fontFamily: "'DM Sans', sans-serif" }}>
@@ -2917,7 +2933,7 @@ function ContractPaperCabeleireiro({ data }) {
       <p style={pStyle}>Neste mesmo ato informa-se o valor do capital social da empresa com a distribuição das quotas citadas, objeto social, nome empresarial, endereço e Enquadramento quanto ao Porte, doravante, pelo presente a qual se regerá;</p>
 
       <h2 id="cc-1" style={secStyle}>CLÁUSULA PRIMEIRA</h2>
-      <p style={pStyle}>A razão Social passa a ser <b>{ph(d.ne_razao)}</b>.</p>
+      <p style={pStyle}>{d.clausula_primeira || <>A razão Social passa a ser <b>{ph(d.ne_razao)}</b>.</>}</p>
 
       <h2 id="cc-2" style={secStyle}>CLÁUSULA SEGUNDA</h2>
       <p style={pStyle}>O Capital Social é de R$ {ph(d.cap_total)}({ph(d.cap_total_extenso)}), divididos em {ph(d.cap_num_quotas)} ({ph(d.cap_num_quotas_extenso)}) quotas no valor de R$ {ph(d.cap_valor_quota)}({ph(d.cap_valor_quota_extenso)}) cada, com a seguinte distribuição:</p>
@@ -3144,10 +3160,10 @@ function ContractPaperParceria({ data }) {
 
       <div style={{ marginTop: 50, display: "flex", justifyContent: "space-between", gap: 40 }}>
         <div style={{ flex: 1, textAlign: "center", borderTop: "1px solid #333", paddingTop: 10 }}>
-          <b>SALÃO-PARCEIRO</b>
+          <b>SALÃO-PARCEIRO</b><br/>{ph(d.sp_razao)}
         </div>
         <div style={{ flex: 1, textAlign: "center", borderTop: "1px solid #333", paddingTop: 10 }}>
-          <b>PROFISSIONAL-PARCEIRO</b>
+          <b>PROFISSIONAL-PARCEIRO</b><br/>{ph(d.pp_nome)}
         </div>
       </div>
 
