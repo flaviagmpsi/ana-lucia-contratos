@@ -1298,9 +1298,6 @@ const FIELD_GROUPS_ALTERACAOESSENCIAL = [
 ];
 
 const CLAUSE_ITEMS_ALTERACAOESSENCIAL = [
-  { icon: "🔄", label: "Transformação", id: "ae-transformacao" },
-  { icon: "🏢", label: "Denominação e Sede", id: "ae-denominacao" },
-  { icon: "🎯", label: "Objeto Social (Transf.)", id: "ae-objeto-transf" },
   { icon: "📜", label: "Atos Constitutivos", id: "ae-atos" },
   { icon: "🏛️", label: "Denominação e Duração", id: "ae-denominacao-atos" },
   { icon: "💰", label: "Capital Social", id: "ae-capital" },
@@ -2435,20 +2432,6 @@ function buildContractHTMLAlteracaoEssencial(d) {
 <p style="text-align:center;font-size:11pt;margin-bottom:20pt;">EM ${_(d.emp_data_registro)}</p>
 
 <h1 style="font-size:14pt;text-align:center;margin-bottom:20pt;letter-spacing:0.5pt;font-weight:700;">TRANSFORMAÇÃO EM SOCIEDADE EMPRESARIA LIMITADA</h1>
-
-${p(`${b(_(d.emp_razao_anterior))}, empresario individual, inscrita no CNPJ sob nº ${_(d.emp_cnpj)}, registro no Conselho Regional de Contabilidade sob nº ${_(d.emp_crc)}, estabelecida à ${_(d.emp_endereco)}, CEP ${_(d.emp_cep)}, representada pela unica sócia, ${_(d.sc_nome)}, ${_(d.sc_nacionalidade)}, ${_(d.sc_estado_civil)}, ${_(d.sc_profissao)}, nascida em ${_(d.sc_nascimento)}, natural de ${_(d.sc_naturalidade)}, portadora da Cédula de Identidade RG n° ${_(d.sc_rg)}, ${_(d.sc_rg_orgao)}, inscrita no CPF sob n° ${_(d.sc_cpf)}, inscrita no Conselho Regional de Contabilidade, sob nº ${_(d.sc_crc)}, residente à ${_(d.sc_endereco)}, registrada na Junta Comercial de Minas Gerais sob o NIRE nº ${_(d.emp_nire)} em ${_(d.emp_data_registro)} e alteração arquivada sob nº ${_(d.alt_numero)} em ${_(d.alt_data)}, resolve neste ato fazer a Transformação de empresario individual para Sociedade empresária limitada, regida por este Contrato Social, pelas disposições legais aplicáveis às sociedades limitadas na Lei Federal 10.406 de 10 de janeiro de 2002, conforme cláusulas a seguir:`)}
-
-${sec("CAPÍTULO I — DENOMINAÇÃO, SEDE E OBJETO")}
-
-${p(`${b("Cláusula 1.")} Transformação da empresario individual em uma Sociedade empresária Limitada.`)}
-
-${p(`${b("Cláusula 2.")} Alteração sua razão social para ${b(_(d.emp_razao_nova))}, e mantem seu nome fantasia, ${b(_(d.emp_nome_fantasia))}.`)}
-
-${p(`${b("Cláusula 3.")} A sociedade continua na sua sede e foro na ${_(d.emp_endereco)}, CEP. ${_(d.emp_cep).replace(/[.\-]/g, "").replace(/(\d{5})(\d{3})/, "$1-$2")}, e poderá abrir e encerrar filiais, em qualquer localidade do País.`)}
-
-${p(`${b("Cláusula 4.")} O objeto social é ${_(d.emp_objeto)}.`)}
-
-<div style="page-break-before:always;"></div>
 
 <p style="text-align:center;font-size:12pt;font-weight:700;margin-bottom:4pt;margin-top:30pt;">ATOS CONSTITUTIVOS</p>
 
@@ -3615,26 +3598,12 @@ function ContractPaperAlteracaoEssencial({ data }) {
       <p style={{ textAlign: "center", fontSize: "11pt", marginBottom: 2 }}>NIRE {ph(d.emp_nire)}</p>
       <p style={{ textAlign: "center", fontSize: "11pt", marginBottom: 20 }}>EM {ph(d.emp_data_registro)}</p>
 
-      <h1 id="ae-transformacao" style={{ fontSize: "14pt", textAlign: "center", marginBottom: 20, letterSpacing: 0.5, fontWeight: 700 }}>
+      <h1 style={{ fontSize: "14pt", textAlign: "center", marginBottom: 20, letterSpacing: 0.5, fontWeight: 700 }}>
         TRANSFORMAÇÃO EM SOCIEDADE EMPRESARIA LIMITADA
       </h1>
 
-      <p style={pStyle}>
-        <b>{ph(d.emp_razao_anterior)}</b>, empresario individual, inscrita no CNPJ sob nº {ph(d.emp_cnpj)}, registro no Conselho Regional de Contabilidade sob nº {ph(d.emp_crc)}, estabelecida à {ph(d.emp_endereco)}, CEP {ph(d.emp_cep)}, representada pela unica sócia, {ph(d.sc_nome)}, {ph(d.sc_nacionalidade)}, {ph(d.sc_estado_civil)}, {ph(d.sc_profissao)}, nascida em {ph(d.sc_nascimento)}, natural de {ph(d.sc_naturalidade)}, portadora da Cédula de Identidade RG n° {ph(d.sc_rg)}, {ph(d.sc_rg_orgao)}, inscrita no CPF sob n° {ph(d.sc_cpf)}, inscrita no Conselho Regional de Contabilidade, sob nº {ph(d.sc_crc)}, residente à {ph(d.sc_endereco)}, registrada na Junta Comercial de Minas Gerais sob o NIRE nº {ph(d.emp_nire)} em {ph(d.emp_data_registro)} e alteração arquivada sob nº {ph(d.alt_numero)} em {ph(d.alt_data)}, resolve neste ato fazer a Transformação de empresario individual para Sociedade empresária limitada, regida por este Contrato Social, pelas disposições legais aplicáveis às sociedades limitadas na Lei Federal 10.406 de 10 de janeiro de 2002, conforme cláusulas a seguir:
-      </p>
-
-      <h2 id="ae-denominacao" style={secStyle}>CAPÍTULO I — DENOMINAÇÃO, SEDE E OBJETO</h2>
-
-      <p style={pStyle}><b>Cláusula 1.</b> Transformação da empresario individual em uma Sociedade empresária Limitada.</p>
-
-      <p style={pStyle}><b>Cláusula 2.</b> Alteração sua razão social para <b>{ph(d.emp_razao_nova)}</b>, e mantem seu nome fantasia, <b>{ph(d.emp_nome_fantasia)}</b>.</p>
-
-      <p style={pStyle}><b>Cláusula 3.</b> A sociedade continua na sua sede e foro na {ph(d.emp_endereco)}, CEP. {ph(d.emp_cep)}, e poderá abrir e encerrar filiais, em qualquer localidade do País.</p>
-
-      <p id="ae-objeto-transf" style={pStyle}><b>Cláusula 4.</b> O objeto social é {ph(d.emp_objeto)}.</p>
-
-      {/* ── PARTE 2: ATOS CONSTITUTIVOS ── */}
-      <div style={{ borderTop: "3px double #1a365d", marginTop: 40, paddingTop: 30 }}>
+      {/* ── ATOS CONSTITUTIVOS ── */}
+      <div>
         <p id="ae-atos" style={{ textAlign: "center", fontSize: "12pt", fontWeight: 700, marginBottom: 4 }}>ATOS CONSTITUTIVOS</p>
 
         <p style={{ textAlign: "center", fontSize: "13pt", fontWeight: 700, marginBottom: 4 }}>{ph(d.emp_razao_nova)}</p>
